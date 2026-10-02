@@ -14,8 +14,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-## Contribution Snake
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)"
