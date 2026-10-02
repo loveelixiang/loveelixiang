@@ -13,12 +13,18 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+## 🐍 Contribution Snake
+
 <p align="center">
-  <img
-    src="./generated/cool-snake.svg"
-    alt="Cool contribution snake"
-    width="100%"
-  />
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/loveelixiang/loveelixiang/output/github-contribution-grid-snake-dark.svg">
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/loveelixiang/loveelixiang/output/github-contribution-grid-snake.svg">
+    <img
+      alt="GitHub contribution snake"
+      src="https://raw.githubusercontent.com/loveelixiang/loveelixiang/output/github-contribution-grid-snake.svg">
+  </picture>
 </p>
-
-
