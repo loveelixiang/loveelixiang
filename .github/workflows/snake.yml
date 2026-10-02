@@ -21,6 +21,55 @@ jobs:
             dist/github-contribution-grid-snake.svg?color_snake=black
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=white
 
+      # 自动裁掉 SVG 底部的进度条区域
+      - name: Remove progress bar
+        run: |
+          python <<'PY'
+          import re
+          from pathlib import Path
+
+          files = [
+              Path("dist/github-contribution-grid-snake.svg"),
+              Path("dist/github-contribution-grid-snake-dark.svg"),
+          ]
+
+          for file in files:
+              text = file.read_text(encoding="utf-8")
+
+              # 读取 viewBox
+              match = re.search(
+                  r'viewBox="([\d.\-]+)\s+([\d.\-]+)\s+([\d.\-]+)\s+([\d.\-]+)"',
+                  text
+              )
+
+              if not match:
+                  print(f"No viewBox found: {file}")
+                  continue
+
+              x, y, width, height = map(float, match.groups())
+
+              # 只保留上方约 78% 的区域
+              # 用于裁掉 snk SVG 底部的进度条
+              new_height = height * 0.78
+
+              old_viewbox = match.group(0)
+              new_viewbox = f'viewBox="{x:g} {y:g} {width:g} {new_height:g}"'
+
+              text = text.replace(old_viewbox, new_viewbox, 1)
+
+              # 如果 SVG 本身还有 height 属性，也同步缩短
+              text = re.sub(
+                  r'(<svg\b[^>]*\bheight=")[^"]+(")',
+                  lambda m: m.group(1) + f"{new_height:g}" + m.group(2),
+                  text,
+                  count=1
+              )
+
+              file.write_text(text, encoding="utf-8")
+              print(f"Cropped {file}: {height:g} -> {new_height:g}")
+
+          PY
+
       - name: Push snake to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
