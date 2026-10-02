@@ -13,13 +13,13 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<p align="center">
+<!-- <p align="center">
   <img
     src="./generated/contribution-3d.svg"
     alt="3D GitHub contribution graph"
     width="100%"
   />
-</p>
+</p> -->
 
 <p align="center">
   <picture>
