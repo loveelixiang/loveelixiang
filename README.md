@@ -13,21 +13,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<!-- <p align="center">
+<p align="center">
   <img
-    src="./generated/contribution-3d.svg"
-    alt="3D GitHub contribution graph"
+    src="./generated/cool-snake.svg"
+    alt="Cool contribution snake"
     width="100%"
   />
-</p> -->
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/loveelixiang/loveelixiang/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/loveelixiang/loveelixiang/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution snake"
-      src="https://raw.githubusercontent.com/loveelixiang/loveelixiang/output/github-contribution-grid-snake.svg">
-  </picture>
 </p>
+
+
